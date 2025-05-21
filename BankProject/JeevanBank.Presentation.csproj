@@ -62,10 +62,6 @@
       <Project>{14b7ac5c-d85a-4410-afbf-682424e48a81}</Project>
       <Name>JeevanBank.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\JeevanBank.DataAccessLayer\JeevanBank.DataAccessLayer.csproj">
-      <Project>{9e6ec2f2-d948-42ec-b3d9-19447e5d3726}</Project>
-      <Name>JeevanBank.DataAccessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\JeevanBank.Exceptions\JeevanBank.Exceptions.csproj">
       <Project>{6208c582-5f61-4077-a5ce-53c22fcda90b}</Project>
       <Name>JeevanBank.Exceptions</Name>

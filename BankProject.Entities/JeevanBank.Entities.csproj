@@ -44,5 +44,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JeevanBank.Exceptions\JeevanBank.Exceptions.csproj">
+      <Project>{6208c582-5f61-4077-a5ce-53c22fcda90b}</Project>
+      <Name>JeevanBank.Exceptions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
