@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeevanBank.Presentation", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeevanBank.Entities", "BankProject.Entities\JeevanBank.Entities.csproj", "{DA05AC18-A7FD-41C4-9B99-CF7E9FD4E8CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeevanBank.DataAccessLayer", "JeevanBank.DataAccessLayer\JeevanBank.DataAccessLayer.csproj", "{9E6EC2F2-D948-42EC-B3D9-19447E5D3726}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DA05AC18-A7FD-41C4-9B99-CF7E9FD4E8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA05AC18-A7FD-41C4-9B99-CF7E9FD4E8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA05AC18-A7FD-41C4-9B99-CF7E9FD4E8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E6EC2F2-D948-42EC-B3D9-19447E5D3726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6EC2F2-D948-42EC-B3D9-19447E5D3726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E6EC2F2-D948-42EC-B3D9-19447E5D3726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E6EC2F2-D948-42EC-B3D9-19447E5D3726}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

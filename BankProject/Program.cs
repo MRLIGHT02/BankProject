@@ -4,7 +4,7 @@
     static void Main()
     {
         //display title
-        System.Console.WriteLine("************** Harsha Bank *****************");
+        System.Console.WriteLine("************** Jeevan Bank *****************");
         System.Console.WriteLine("::Login Page::");
 
         //declare variables to store username and password;
