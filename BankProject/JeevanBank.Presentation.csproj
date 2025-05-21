@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BankProject.Entities\JeevanBank.csproj">
+    <ProjectReference Include="..\BankProject.Entities\JeevanBank.Entities.csproj">
       <Project>{da05ac18-a7fd-41c4-9b99-cf7e9fd4e8ce}</Project>
-      <Name>JeevanBank</Name>
+      <Name>JeevanBank.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

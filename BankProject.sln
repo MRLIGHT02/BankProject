@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankProject.Presentation", "BankProject\BankProject.Presentation.csproj", "{12EB44A6-992C-4D11-99FC-8D94B642D323}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeevanBank.Presentation", "BankProject\JeevanBank.Presentation.csproj", "{12EB44A6-992C-4D11-99FC-8D94B642D323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeevanBank", "BankProject.Entities\JeevanBank.csproj", "{DA05AC18-A7FD-41C4-9B99-CF7E9FD4E8CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeevanBank.Entities", "BankProject.Entities\JeevanBank.Entities.csproj", "{DA05AC18-A7FD-41C4-9B99-CF7E9FD4E8CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
