@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>dd544376-e1ec-4ed5-93d1-049cadcd53be</ProjectGuid>
+    <ProjectGuid>{DD544376-E1EC-4ED5-93D1-049CADCD53BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JeevanBank.BusinessLogicLayer</RootNamespace>
@@ -31,24 +31,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankProject.Entities\JeevanBank.Entities.csproj">
+      <Project>{da05ac18-a7fd-41c4-9b99-cf7e9fd4e8ce}</Project>
+      <Name>JeevanBank.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JeevanBank.Configuration\JeevanBank.Configuration.csproj">
+      <Project>{14b7ac5c-d85a-4410-afbf-682424e48a81}</Project>
+      <Name>JeevanBank.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JeevanBank.DataAccessLayer\JeevanBank.DataAccessLayer.csproj">
+      <Project>{9e6ec2f2-d948-42ec-b3d9-19447e5d3726}</Project>
+      <Name>JeevanBank.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JeevanBank.Exceptions\JeevanBank.Exceptions.csproj">
+      <Project>{6208c582-5f61-4077-a5ce-53c22fcda90b}</Project>
+      <Name>JeevanBank.Exceptions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
