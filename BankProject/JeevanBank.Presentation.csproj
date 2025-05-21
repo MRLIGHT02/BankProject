@@ -54,9 +54,21 @@
       <Project>{da05ac18-a7fd-41c4-9b99-cf7e9fd4e8ce}</Project>
       <Name>JeevanBank.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JeevanBank.BusinessLogicLayer\JeevanBank.BusinessLogicLayer.csproj">
+      <Project>{dd544376-e1ec-4ed5-93d1-049cadcd53be}</Project>
+      <Name>JeevanBank.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JeevanBank.Configuration\JeevanBank.Configuration.csproj">
+      <Project>{14b7ac5c-d85a-4410-afbf-682424e48a81}</Project>
+      <Name>JeevanBank.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JeevanBank.DataAccessLayer\JeevanBank.DataAccessLayer.csproj">
       <Project>{9e6ec2f2-d948-42ec-b3d9-19447e5d3726}</Project>
       <Name>JeevanBank.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JeevanBank.Exceptions\JeevanBank.Exceptions.csproj">
+      <Project>{6208c582-5f61-4077-a5ce-53c22fcda90b}</Project>
+      <Name>JeevanBank.Exceptions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
