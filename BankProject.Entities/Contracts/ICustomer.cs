@@ -7,10 +7,10 @@ namespace JeevanBank.Entities.Contracts
     /// Represents a customer with identifying information, contact details, and location data.
     /// </summary>
     /// <remarks>This interface defines the properties required to uniquely identify a customer and store
-    /// their  associated details, such as name, address, and contact information. It is intended to be implemented  by
-    /// classes that manage customer data in applications.</remarks>
+    /// their  associated details, such as name, address, and contact information. It is intended to be implemented  by </remarks>
     public interface ICustomer
     {
+        #region Properties
         Guid CustomerID { get; set; }
         long CustomerCode { get; set; }
         string CustomerName { get; set; }
@@ -19,5 +19,6 @@ namespace JeevanBank.Entities.Contracts
         string City { get; set; }
         string Country { get; set; }
         string Mobile { get; set; }
+        #endregion
     }
 }

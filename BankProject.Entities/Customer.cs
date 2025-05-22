@@ -7,11 +7,12 @@ namespace JeevanBank.Entities
     /// Represents a customer with associated details such as name, address, and contact information.
     /// </summary>
     /// <remarks>This class provides properties to store and retrieve customer information, including unique
-    /// identifiers, contact details, and location data. It is designed to be used in scenarios where customer data
-    /// needs to be managed or processed, such as in customer relationship management (CRM) systems or e-commerce
+    /// identifiers, contact details, and location data. 
     /// platforms.</remarks>
+
     public class Customer : ICustomer
     {
+        #region Private Fields
         private Guid _customerID;
         private long _customerCode;
         private string _customerName;
@@ -20,14 +21,42 @@ namespace JeevanBank.Entities
         private string _city;
         private string _country;
         private string _mobile;
+        #endregion
 
+
+        #region Public Properties
+        /// <summary>
+        /// GUID Gets or sets the unique identifier for the customer.
+        /// </summary>
         public Guid CustomerID { get => _customerID; set => _customerID = value; }
+        /// <summary>
+        /// Auto Generated code Number of the Customer
+        /// </summary>
         public long CustomerCode { get => _customerCode; set => _customerCode = value; }
+        /// <summary>
+        /// Gets or sets the name of the customer.
+        /// </summary>
         public string CustomerName { get => _customerName; set => _customerName = value; }
+        /// <summary>
+        /// Gets or sets the address associated with the entity.
+        /// </summary>
         public string Address { get => _address; set => _address = value; }
+        /// <summary>
+        /// Gets or sets the landmarks associated with the object.
+        /// </summary>
         public string Landmarks { get => _landmarks; set => _landmarks = value; }
+        /// <summary>
+        /// Gets or sets the name of the city.
+        /// </summary>
         public string City { get => _city; set => _city = value; }
+        /// <summary>
+        /// Gets or sets the country associated with the current entity.
+        /// </summary>
         public string Country { get => _country; set => _country = value; }
+        /// <summary>
+        /// Gets or sets the mobile phone number associated with the entity.
+        /// </summary>
         public string Mobile { get => _mobile; set => _mobile = value; }
+        #endregion
     }
 }
