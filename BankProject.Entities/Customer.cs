@@ -1,5 +1,6 @@
 ﻿using System;
 using JeevanBank.Entities.Contracts;
+using JeevanBank.Exceptions;
 
 namespace JeevanBank.Entities
 {
@@ -28,11 +29,30 @@ namespace JeevanBank.Entities
         /// <summary>
         /// GUID Gets or sets the unique identifier for the customer.
         /// </summary>
-        public Guid CustomerID { get => _customerID; set => _customerID = value; }
+        public Guid CustomerID
+        {
+            get => _customerID;
+            set => _customerID = value;
+        }
         /// <summary>
         /// Auto Generated code Number of the Customer
         /// </summary>
-        public long CustomerCode { get => _customerCode; set => _customerCode = value; }
+        public long CustomerCode
+        {
+            get => _customerCode;
+            set
+            {
+                // Adding validation logic
+                if (value > 0)
+                {
+                    _customerCode = value;
+                }
+                else
+                {
+                    throw new CustomerException("Customer Code must be postive integer.");
+                }
+            }
+        }
         /// <summary>
         /// Gets or sets the name of the customer.
         /// </summary>
