@@ -3,6 +3,13 @@ using JeevanBank.Entities.Contracts;
 
 namespace JeevanBank.Entities
 {
+    /// <summary>
+    /// Represents a customer with associated details such as name, address, and contact information.
+    /// </summary>
+    /// <remarks>This class provides properties to store and retrieve customer information, including unique
+    /// identifiers, contact details, and location data. It is designed to be used in scenarios where customer data
+    /// needs to be managed or processed, such as in customer relationship management (CRM) systems or e-commerce
+    /// platforms.</remarks>
     public class Customer : ICustomer
     {
         private Guid _customerID;
