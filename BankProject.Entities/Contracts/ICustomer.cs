@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JeevanBank.Entities
 {
-    public class Class1
+    public class ICustomer
     {
     }
 }
