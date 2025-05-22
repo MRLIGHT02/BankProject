@@ -54,7 +54,7 @@ namespace JeevanBank.Entities
         /// </summary>
         public string Country { get => _country; set => _country = value; }
         /// <summary>
-        /// Gets or sets the mobile phone number associated with the entity.
+        /// Gets or sets the mobile phone number associated with the entity. Number Must be 10-digits.
         /// </summary>
         public string Mobile { get => _mobile; set => _mobile = value; }
         #endregion
