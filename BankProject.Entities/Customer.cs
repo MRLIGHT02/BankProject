@@ -1,6 +1,8 @@
 ﻿using System;
 using JeevanBank.Entities.Contracts;
 using JeevanBank.Exceptions;
+using System.Text.RegularExpressions;
+using System.Security.Policy;
 
 namespace JeevanBank.Entities
 {
@@ -56,7 +58,21 @@ namespace JeevanBank.Entities
         /// <summary>
         /// Gets or sets the name of the customer.
         /// </summary>
-        public string CustomerName { get => _customerName; set => _customerName = value; }
+        public string CustomerName
+        {
+            get => _customerName; set
+            {
+
+                Regex regex = new Regex("^[\\p{L} \\.'\\-]+$");
+
+                if (regex.IsMatch())
+                {
+                    _customerName = value;
+                }
+
+
+            }
+        }
         /// <summary>
         /// Gets or sets the address associated with the entity.
         /// </summary>
