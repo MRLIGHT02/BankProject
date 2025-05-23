@@ -36,7 +36,9 @@ namespace JeevanBank.DataAccessLayer
         #region Methods
         public List<Customer> GetCustomers()
         {
-            return Customers;
+            List<Customer> customerslist = new List<Customer>();
+            Customers.ForEach(item => customerslist.Add((Customer)item.Clone()));
+            return customerslist;
         }
         public Guid AddCustomer(Customer customer)
         {
