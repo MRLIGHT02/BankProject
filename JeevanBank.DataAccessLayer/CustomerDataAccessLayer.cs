@@ -15,14 +15,51 @@ namespace JeevanBank.DataAccessLayer
     public class CustomerDataAccessLayer : ICustomerDataAccessLayer
     {
         #region Fields
-        private List<Customer> _Customers;
+        private List<Customer> _customers;
         #endregion
 
         #region Constructor
         public CustomerDataAccessLayer()
         {
-
+            _customers = new List<Customer>();
         }
         #endregion
+        #region Properties
+        private List<Customer> Customers
+        {
+            set => _customers = value;
+            get => _customers;
+        }
+
+        #endregion
+
+        #region Methods
+        public List<Customer> GetCustomers()
+        {
+            return Customers;
+        }
+        public Guid AddCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteCustomer(Guid CustomerID)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
     }
 }

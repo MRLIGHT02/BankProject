@@ -13,7 +13,7 @@ namespace JeevanBank.Entities
     /// identifiers, contact details, and location data. 
     /// platforms.</remarks>
 
-    public class Customer : ICustomer
+    public class Customer : ICustomer, ICloneable
     {
         #region Private Fields
         private Guid _customerID;
