@@ -14,29 +14,15 @@ namespace JeevanBank.DataAccessLayer
     /// responsible for interacting with the data source to retrieve, update, and manage customer information.</remarks>
     public class CustomerDataAccessLayer : ICustomerDataAccessLayer
     {
-        public Guid AddCustomer(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
+        #region Fields
+        private List<Customer> _Customers;
+        #endregion
 
-        public bool DeleteCustomer(Guid CustomerID)
+        #region Constructor
+        public CustomerDataAccessLayer()
         {
-            throw new NotImplementedException();
-        }
 
-        public List<Customer> GetCustomers()
-        {
-            throw new NotImplementedException();
         }
-
-        public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateCustomer(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }
