@@ -110,5 +110,22 @@ namespace JeevanBank.Entities
             }
         }
         #endregion
+        #region Methods
+
+        public object Clone()
+        {
+            return new Customer()
+            {
+                CustomerID = this.CustomerID,
+                CustomerCode = this.CustomerCode,
+                CustomerName = this.CustomerName,
+                City = this.City,
+                Country = this.Country,
+                Address = this.Address,
+                Landmarks = this.Landmarks,
+                Mobile = this.Mobile
+            };
+        }
+        #endregion
     }
 }
