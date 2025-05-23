@@ -33,5 +33,9 @@ namespace JeevanBank.DataAccessLayer.DALContracts
         /// <returns>The unique identifier (<see cref="Guid"/>) assigned to the newly added customer.</returns>
         Guid AddCustomer(Customer customer);
 
+        bool UpdateCustomer(Customer customer);
+
+        bool DeleteCustomer(Guid CustomerID);
+
     }
 }
