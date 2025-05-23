@@ -66,6 +66,10 @@ namespace JeevanBank.Entities
                 {
                     _customerName = value;
                 }
+                else
+                {
+                    throw new CustomerException("Name Must be Within 40 char");
+                }
             }
 
         }
@@ -90,7 +94,21 @@ namespace JeevanBank.Entities
         /// <summary>
         /// Gets or sets the mobile phone number associated with the entity. Number Must be 10-digits.
         /// </summary>
-        public string Mobile { get => _mobile; set => _mobile = value; }
+        public string Mobile
+        {
+            get => _mobile; set
+            {
+                if (value.Length == 10)
+                {
+
+                    _mobile = value;
+                }
+                else
+                {
+                    throw new CustomerException("Please Enter Valid Number");
+                }
+            }
+        }
         #endregion
     }
 }
