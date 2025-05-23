@@ -62,17 +62,15 @@ namespace JeevanBank.Entities
         {
             get => _customerName; set
             {
-
-                Regex regex = new Regex("^[\\p{L} \\.'\\-]+$");
-
-                if (regex.IsMatch())
+                if (value.Length <= 40 && string.IsNullOrEmpty(value) == false)
                 {
                     _customerName = value;
                 }
-
-
             }
+
         }
+
+
         /// <summary>
         /// Gets or sets the address associated with the entity.
         /// </summary>
