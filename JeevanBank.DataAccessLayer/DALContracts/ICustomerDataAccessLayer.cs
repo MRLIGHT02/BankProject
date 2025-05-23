@@ -25,7 +25,13 @@ namespace JeevanBank.DataAccessLayer.DALContracts
         /// </summary>
         /// <returns>A list of <see cref="Customer"/> objects that meet the specified condition.  Returns an empty list if no
         /// customers match the condition.</returns>
-        List<Customer> GetCustomersByCondition();
+        List<Customer> GetCustomersByCondition(Predicate<Customer> predicate);
+        /// <summary>
+        /// Adds a new customer to the system and returns the unique identifier for the customer.
+        /// </summary>
+        /// <param name="customer">The customer to add. Must not be null and must contain valid data.</param>
+        /// <returns>The unique identifier (<see cref="Guid"/>) assigned to the newly added customer.</returns>
+        Guid AddCustomer(Customer customer);
 
     }
 }
