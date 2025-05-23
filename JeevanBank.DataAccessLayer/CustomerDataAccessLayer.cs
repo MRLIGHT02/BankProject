@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JeevanBank.DataAccessLayer
 {
-    public class Class1
+    public class CustomerDataAccessLayer
     {
     }
 }
