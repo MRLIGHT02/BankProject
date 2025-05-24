@@ -44,11 +44,18 @@ namespace JeevanBank.DataAccessLayer
         /// the original collection. The list will be empty if there are no customers in the original collection.</returns>
         public List<Customer> GetCustomers()
         {
-            // create a new customer list
-            List<Customer> customerslist = new List<Customer>();
-            // Copy all customer from the source collection into newCustomer list
-            Customers.ForEach(item => customerslist.Add((Customer)item.Clone()));
-            return customerslist;
+            try
+            {
+                // create a new customer list
+                List<Customer> customerslist = new List<Customer>();
+                // Copy all customer from the source collection into newCustomer list
+                Customers.ForEach(item => customerslist.Add((Customer)item.Clone()));
+                return customerslist;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Retrieves a list of customers that satisfy the specified condition.
@@ -57,21 +64,36 @@ namespace JeevanBank.DataAccessLayer
         /// <returns>A list of customers that match the specified condition. If no customers match, an empty list is returned.</returns>
         public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
         {
-            // create a new customer list
-            List<Customer> customerslist = new List<Customer>();
-            // filter the condition
-            List<Customer> filteredCustomers = customerslist.FindAll(predicate);
-            // copy all customer from the source collection into the new customer list;
-            Customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
-            return customerslist;
+            try
+            {
+
+                // create a new customer list
+                List<Customer> customerslist = new List<Customer>();
+                // filter the condition
+                List<Customer> filteredCustomers = customerslist.FindAll(predicate);
+                // copy all customer from the source collection into the new customer list;
+                Customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
+                return customerslist;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public Guid AddCustomer(Customer customer)
         {
-            // generate new guid 
-            customer.CustomerID = Guid.NewGuid();
+            try
+            {
+                // generate new guid 
+                customer.CustomerID = Guid.NewGuid();
 
-            Customers.Add(customer);
-            return customer.CustomerID;
+                Customers.Add(customer);
+                return customer.CustomerID;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Deletes a customer with the specified unique identifier.
@@ -85,14 +107,22 @@ namespace JeevanBank.DataAccessLayer
 
         public bool DeleteCustomer(Guid CustomerID)
         {
-            // deleting the customer
-            if (Customers.RemoveAll(item => item.CustomerID == CustomerID) > 0)
+            try
             {
-                return true;
+
+                // deleting the customer
+                if (Customers.RemoveAll(item => item.CustomerID == CustomerID) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception)
             {
-                return false;
+                throw;
             }
         }
 
@@ -105,23 +135,32 @@ namespace JeevanBank.DataAccessLayer
         /// <returns><see langword="true"/> if the customer was successfully updated; otherwise, <see langword="false"/>.</returns>
         public bool UpdateCustomer(Customer customer)
         {
-            // finding is customr exists 
-            Customer existingCustomer = Customers.Find(item => item.CustomerID == customer.CustomerID);
-            // updating the customer
-            if (existingCustomer != null)
+
+            try
             {
-                existingCustomer.CustomerCode = customer.CustomerCode;
-                existingCustomer.CustomerID = customer.CustomerID;
-                existingCustomer.CustomerName = customer.CustomerName;
-                existingCustomer.City = customer.City;
-                existingCustomer.Country = customer.Country;
-                existingCustomer.Address = customer.Address;
-                existingCustomer.Landmarks = customer.Landmarks;
-                return true;
+
+                // finding is customr exists 
+                Customer existingCustomer = Customers.Find(item => item.CustomerID == customer.CustomerID);
+                // updating the customer
+                if (existingCustomer != null)
+                {
+                    existingCustomer.CustomerCode = customer.CustomerCode;
+                    existingCustomer.CustomerID = customer.CustomerID;
+                    existingCustomer.CustomerName = customer.CustomerName;
+                    existingCustomer.City = customer.City;
+                    existingCustomer.Country = customer.Country;
+                    existingCustomer.Address = customer.Address;
+                    existingCustomer.Landmarks = customer.Landmarks;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception)
             {
-                return false;
+                throw;
             }
 
         }
