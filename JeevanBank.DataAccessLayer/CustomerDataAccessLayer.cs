@@ -73,10 +73,27 @@ namespace JeevanBank.DataAccessLayer
             Customers.Add(customer);
             return customer.CustomerID;
         }
+        /// <summary>
+        /// Deletes a customer with the specified unique identifier.
+        /// </summary>
+        /// <remarks>This method searches for a customer by their unique identifier and removes them from
+        /// the collection.  If no customer with the specified identifier exists, the method returns <see
+        /// langword="false"/>.</remarks>
+        /// <param name="CustomerID">The unique identifier of the customer to delete.</param>
+        /// <returns><see langword="true"/> if a customer with the specified identifier was successfully deleted;  otherwise,
+        /// <see langword="false"/>.</returns>
 
         public bool DeleteCustomer(Guid CustomerID)
         {
-            throw new NotImplementedException();
+            // deleting the customer
+            if (Customers.RemoveAll(item => item.CustomerID == CustomerID) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -88,8 +105,9 @@ namespace JeevanBank.DataAccessLayer
         /// <returns><see langword="true"/> if the customer was successfully updated; otherwise, <see langword="false"/>.</returns>
         public bool UpdateCustomer(Customer customer)
         {
+            // finding is customr exists 
             Customer existingCustomer = Customers.Find(item => item.CustomerID == customer.CustomerID);
-
+            // updating the customer
             if (existingCustomer != null)
             {
                 existingCustomer.CustomerCode = customer.CustomerCode;
@@ -98,7 +116,12 @@ namespace JeevanBank.DataAccessLayer
                 existingCustomer.City = customer.City;
                 existingCustomer.Country = customer.Country;
                 existingCustomer.Address = customer.Address;
-                existingCustomer.Landmarks = customer.Landmarks
+                existingCustomer.Landmarks = customer.Landmarks;
+                return true;
+            }
+            else
+            {
+                return false;
             }
 
         }
