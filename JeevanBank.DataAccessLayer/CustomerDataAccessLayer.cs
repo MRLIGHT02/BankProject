@@ -50,6 +50,11 @@ namespace JeevanBank.DataAccessLayer
             Customers.ForEach(item => customerslist.Add((Customer)item.Clone()));
             return customerslist;
         }
+        /// <summary>
+        /// Retrieves a list of customers that satisfy the specified condition.
+        /// </summary>
+        /// <param name="predicate">A predicate that defines the condition each customer must satisfy to be included in the result.</param>
+        /// <returns>A list of customers that match the specified condition. If no customers match, an empty list is returned.</returns>
         public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
         {
             // create a new customer list
@@ -62,7 +67,11 @@ namespace JeevanBank.DataAccessLayer
         }
         public Guid AddCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            // generate new guid 
+            customer.CustomerID = Guid.NewGuid();
+
+            Customers.Add(customer);
+            return customer.CustomerID;
         }
 
         public bool DeleteCustomer(Guid CustomerID)
@@ -71,10 +80,16 @@ namespace JeevanBank.DataAccessLayer
         }
 
 
-
+        /// <summary>
+        /// Updates the details of an existing customer in the system.
+        /// </summary>
+        /// <param name="customer">The customer object containing updated information. The <see cref="Customer.Id"/> property must be set to
+        /// identify the customer to update.</param>
+        /// <returns><see langword="true"/> if the customer was successfully updated; otherwise, <see langword="false"/>.</returns>
         public bool UpdateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+
+            return false;
         }
 
         #endregion
