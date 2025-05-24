@@ -88,8 +88,19 @@ namespace JeevanBank.DataAccessLayer
         /// <returns><see langword="true"/> if the customer was successfully updated; otherwise, <see langword="false"/>.</returns>
         public bool UpdateCustomer(Customer customer)
         {
+            Customer existingCustomer = Customers.Find(item => item.CustomerID == customer.CustomerID);
 
-            return false;
+            if (existingCustomer != null)
+            {
+                existingCustomer.CustomerCode = customer.CustomerCode;
+                existingCustomer.CustomerID = customer.CustomerID;
+                existingCustomer.CustomerName = customer.CustomerName;
+                existingCustomer.City = customer.City;
+                existingCustomer.Country = customer.Country;
+                existingCustomer.Address = customer.Address;
+                existingCustomer.Landmarks = customer.Landmarks
+            }
+
         }
 
         #endregion
