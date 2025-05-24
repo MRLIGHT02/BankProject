@@ -52,6 +52,10 @@ namespace JeevanBank.DataAccessLayer
                 Customers.ForEach(item => customerslist.Add((Customer)item.Clone()));
                 return customerslist;
             }
+            catch (CustomerException)
+            {
+                throw;
+            }
             catch (Exception)
             {
                 throw;
@@ -75,6 +79,10 @@ namespace JeevanBank.DataAccessLayer
                 Customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
                 return customerslist;
             }
+            catch (CustomerException)
+            {
+                throw;
+            }
             catch (Exception)
             {
                 throw;
@@ -89,6 +97,10 @@ namespace JeevanBank.DataAccessLayer
 
                 Customers.Add(customer);
                 return customer.CustomerID;
+            }
+            catch (CustomerException)
+            {
+                throw;
             }
             catch (Exception)
             {
@@ -119,6 +131,10 @@ namespace JeevanBank.DataAccessLayer
                 {
                     return false;
                 }
+            }
+            catch (CustomerException)
+            {
+                throw;
             }
             catch (Exception)
             {
@@ -157,6 +173,10 @@ namespace JeevanBank.DataAccessLayer
                 {
                     return false;
                 }
+            }
+            catch (CustomerException)
+            {
+                throw;
             }
             catch (Exception)
             {
