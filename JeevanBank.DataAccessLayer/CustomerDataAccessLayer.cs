@@ -34,10 +34,30 @@ namespace JeevanBank.DataAccessLayer
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Retrieves a list of customers as a new collection of cloned objects.
+        /// </summary>
+        /// <remarks>Each customer in the returned list is a deep copy of the corresponding customer in
+        /// the original collection, ensuring that modifications to the returned list or its elements do not affect the
+        /// original data.</remarks>
+        /// <returns>A <see cref="List{T}"/> of <see cref="Customer"/> objects, where each object is a clone of a customer from
+        /// the original collection. The list will be empty if there are no customers in the original collection.</returns>
         public List<Customer> GetCustomers()
         {
+            // create a new customer list
             List<Customer> customerslist = new List<Customer>();
+            // Copy all customer from the source collection into newCustomer list
             Customers.ForEach(item => customerslist.Add((Customer)item.Clone()));
+            return customerslist;
+        }
+        public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
+        {
+            // create a new customer list
+            List<Customer> customerslist = new List<Customer>();
+            // filter the condition
+            List<Customer> filteredCustomers = customerslist.FindAll(predicate);
+            // copy all customer from the source collection into the new customer list;
+            Customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
             return customerslist;
         }
         public Guid AddCustomer(Customer customer)
@@ -51,10 +71,6 @@ namespace JeevanBank.DataAccessLayer
         }
 
 
-        public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
-        {
-            throw new NotImplementedException();
-        }
 
         public bool UpdateCustomer(Customer customer)
         {
