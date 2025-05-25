@@ -142,7 +142,11 @@ namespace JeevanBank.DataAccessLayer
             }
         }
 
-        //
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
         public bool UpdateCustomer(Customer customer)
         {
 
