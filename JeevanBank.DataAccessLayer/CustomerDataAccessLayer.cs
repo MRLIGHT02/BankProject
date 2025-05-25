@@ -174,7 +174,7 @@ namespace JeevanBank.DataAccessLayer
                     return false;
                 }
             }
-            // catch block to catch exception
+
             catch (CustomerException)
             {
                 throw;
