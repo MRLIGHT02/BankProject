@@ -142,13 +142,7 @@ namespace JeevanBank.DataAccessLayer
             }
         }
 
-
-        /// <summary>
-        /// Updates the details of an existing customer in the system.
-        /// </summary>
-        /// <param name="customer">The customer object containing updated information. The <see cref="Customer.Id"/> property must be set to
-        /// identify the customer to update.</param>
-        /// <returns><see langword="true"/> if the customer was successfully updated; otherwise, <see langword="false"/>.</returns>
+        //
         public bool UpdateCustomer(Customer customer)
         {
 
