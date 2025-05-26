@@ -75,6 +75,9 @@ namespace JeevanBank.Entities
         }
 
 
+        /// <summary>
+        /// Gets or sets the address associated with the entity.
+        /// </summary>
         public string Address { get => _address; set => _address = value; }
         /// <summary>
         /// Gets or sets the landmarks associated with the object.
