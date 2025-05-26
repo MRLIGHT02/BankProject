@@ -6,12 +6,7 @@ using System.Security.Policy;
 
 namespace JeevanBank.Entities
 {
-    /// <summary>
-    /// Represents a customer with associated details such as name, address, and contact information.
-    /// </summary>
-    /// <remarks>This class provides properties to store and retrieve customer information, including unique
-    /// identifiers, contact details, and location data. 
-    /// platforms.</remarks>
+
 
     public class Customer : ICustomer, ICloneable
     {
