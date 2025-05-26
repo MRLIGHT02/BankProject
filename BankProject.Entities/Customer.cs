@@ -55,7 +55,7 @@ namespace JeevanBank.Entities
                 }
             }
         }
-
+        zzzzzzzzzzzzzzzzzzzzzzzzzz
         public string CustomerName
         {
             get => _customerName; set
