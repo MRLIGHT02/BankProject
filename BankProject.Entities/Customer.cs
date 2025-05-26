@@ -55,9 +55,7 @@ namespace JeevanBank.Entities
                 }
             }
         }
-        /// <summary>
-        /// Gets or sets the name of the customer.
-        /// </summary>
+
         public string CustomerName
         {
             get => _customerName; set
