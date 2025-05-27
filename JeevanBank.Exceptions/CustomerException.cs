@@ -21,10 +21,7 @@ namespace JeevanBank.Exceptions
         {
         }
 
-        /// <summary>
-        /// Constructor that initializes a new instance of the <see cref="CustomerException"/> class with a specified error message.
-        /// </summary>
-        /// <param name="message">The message that describes the error.</param>
+
         public CustomerException(string message) : base(message)
         {
 
