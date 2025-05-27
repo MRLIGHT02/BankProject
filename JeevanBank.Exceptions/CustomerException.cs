@@ -29,12 +29,7 @@ namespace JeevanBank.Exceptions
         {
 
         }
-        /// <summary>
-        /// Constructor that represents an exception that occurs specifically in customer-related operations.
-        /// </summary>
-        /// <param name="message">The error message that explains the reason for the exception.</param>
-        /// <param name="innerException">The exception that caused the current exception, or <see langword="null"/> if no inner exception is
-        /// specified.</param>
+
 
         public CustomerException(string message, Exception innerException) : base(message, innerException)
         {
