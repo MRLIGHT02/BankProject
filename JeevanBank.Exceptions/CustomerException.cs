@@ -12,11 +12,7 @@ namespace JeevanBank.Exceptions
     public class CustomerException : ApplicationException
     {
         #region Constructors
-        /// <summary>
-        /// Constructor that represents an exception specific to customer-related operations.
-        /// </summary>
-        /// <remarks>This exception can be used to indicate errors or issues that occur during
-        /// customer-related processes.</remarks>
+
         public CustomerException()
         {
         }
