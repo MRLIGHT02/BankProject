@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JeevanBank.BusinessLogicLayer.BALContracts
 {
-    internal class ICustomerBusinessLogicLayer
+    internal interface ICustomerBusinessLogicLayer
     {
     }
 }
