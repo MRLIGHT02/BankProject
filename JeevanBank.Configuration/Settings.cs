@@ -13,6 +13,9 @@ namespace JeevanBank.Configuration
     /// application. It is intended for use in scenarios where global configuration values are required.</remarks>
     public static class Settings
     {
+        /// <summary>
+        /// Gets or sets the base customer number used as the starting point for generating customer identifiers.
+        /// </summary>
         public static long BaseCustomerNumber { get; set; } = 1000;
     }
 }
