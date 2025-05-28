@@ -12,7 +12,7 @@ namespace JeevanBank.DataAccessLayer.DALContracts
     /// </summary>
     /// <remarks>This interface provides an abstraction for customer data operations, allowing implementations
     /// to interact with various data storage mechanisms (e.g., databases, in-memory collections).</remarks>
-    internal interface ICustomerDataAccessLayer
+    public interface ICustomerDataAccessLayer
     {
         /// <summary>
         /// Retrieves a list of all customers.
