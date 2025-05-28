@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JeevanBank.Configuration
 {
-    public class Settings
+    public static class Settings
     {
     }
 }
