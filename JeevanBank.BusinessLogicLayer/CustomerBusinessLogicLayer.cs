@@ -123,13 +123,35 @@ namespace JeevanBank.BusinessLogicLayer
                 throw;
             }
         }
-
+        /// <summary>
+        /// Deletes a customer record identified by the specified unique identifier.
+        /// </summary>
+        /// <param name="CustomerID">The unique identifier of the customer to delete. Must be a valid <see cref="Guid"/>.</param>
+        /// <returns><see langword="true"/> if the customer was successfully deleted; otherwise, <see langword="false"/>.</returns>
         public bool DeleteCustomer(Guid CustomerID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //invoke DAL
+                return CustomerDataAccessLayer.DeleteCustomer(CustomerID);
+            }
+            catch (CustomerException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-
+        /// <summary>
+        /// Retrieves a list of customers that satisfy the specified condition.
+        /// </summary>
+        /// <param name="predicate">A delegate that defines the condition each customer must meet to be included in the result.</param>
+        /// <returns>A list of <see cref="Customer"/> objects that match the specified condition.  Returns an empty list if no
+        /// customers meet the condition.</returns>
         public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
         {
             try
@@ -150,7 +172,20 @@ namespace JeevanBank.BusinessLogicLayer
 
         public bool UpdateCustomer(Customer customer)
         {
+            try
+            {
+                //invoke DAL
+                return CustomerDataAccessLayer.UpdateCustomer(customer);
+            }
+            catch (CustomerException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
         #endregion
 
