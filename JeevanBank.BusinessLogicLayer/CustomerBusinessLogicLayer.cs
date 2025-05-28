@@ -2,6 +2,7 @@
 using JeevanBank.DataAccessLayer;
 using JeevanBank.DataAccessLayer.DALContracts;
 using JeevanBank.Entities;
+using JeevanBank.Exceptions;
 using System;
 using System.Collections.Generic;
 
@@ -61,9 +62,58 @@ namespace JeevanBank.BusinessLogicLayer
         /// <param name="customer">The customer object containing the details of the customer to be added. Cannot be null.</param>
         /// <returns>A <see cref="Guid"/> representing the unique identifier of the newly added customer.</returns>
         /// <exception cref="NotImplementedException"></exception>
+        public List<Customer> GetCustomers()
+        {
+            try
+            {
+                //invoke DAL
+                return CustomerDataAccessLayer.GetCustomers();
+            }
+            catch (CustomerException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        /// <summary>
+        /// Adds a new customer to the system and returns the unique identifier for the created customer.
+        /// </summary>
+        /// <param name="customer">The customer object containing the details of the customer to be added. Cannot be null.</param>
+        /// <returns>The unique identifier (<see cref="Guid"/>) of the newly added customer.</returns>
         public Guid AddCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //get all customer 
+                List<Customer> allCustomer = CustomerDataAccessLayer.GetCustomers();
+                long maxCustCode = 0;
+                foreach (var item in allCustomer)
+                {
+                    if (item.CustomerCode > maxCustCode)
+                    {
+                        maxCustCode = item.CustomerCode;
+                    }
+
+                }
+                // generating new customer no
+                customer.CustomerCode = JeevanBank.Configuration.Settings.BaseCustomerNumber + 1;
+                //invoke DAL
+                return CustomerDataAccessLayer.AddCustomer(customer);
+            }
+            catch (CustomerException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool DeleteCustomer(Guid CustomerID)
@@ -71,14 +121,23 @@ namespace JeevanBank.BusinessLogicLayer
             throw new NotImplementedException();
         }
 
-        public List<Customer> GetCustomers()
-        {
-            throw new NotImplementedException();
-        }
 
         public List<Customer> GetCustomersByCondition(Predicate<Customer> predicate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //invoke DAL
+                return CustomerDataAccessLayer.GetCustomersByCondition(predicate);
+            }
+            catch (CustomerException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool UpdateCustomer(Customer customer)
