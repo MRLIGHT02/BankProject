@@ -79,7 +79,8 @@
             System.Console.WriteLine("1. Add Customer");
             System.Console.WriteLine("2. Delete Customer");
             System.Console.WriteLine("3. Update Customer");
-            System.Console.WriteLine("4. View Customers");
+            System.Console.WriteLine("4. Search Customer");
+            System.Console.WriteLine("5. View Customers");
             System.Console.WriteLine("0. Back to Main Menu");
 
             //accept customers menu choice
