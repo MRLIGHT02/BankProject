@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace JeevanBank.Configuration
 {
+    /// <summary>
+    /// Provides a centralized location for application-wide settings and configuration values.
+    /// </summary>
+    /// <remarks>This class is designed to store and manage static settings that are shared across the
+    /// application. It is intended for use in scenarios where global configuration values are required.</remarks>
     public static class Settings
     {
+        public static long BaseCustomerNumber { get; set; } = 1000;
     }
 }
