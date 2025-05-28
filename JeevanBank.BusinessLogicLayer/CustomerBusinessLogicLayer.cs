@@ -101,7 +101,15 @@ namespace JeevanBank.BusinessLogicLayer
 
                 }
                 // generating new customer no
-                customer.CustomerCode = JeevanBank.Configuration.Settings.BaseCustomerNumber + 1;
+                if (allCustomer.Count >= 1)
+                {
+                    customer.CustomerCode = maxCustCode + 1;
+                }
+                else
+                {
+
+                    customer.CustomerCode = JeevanBank.Configuration.Settings.BaseCustomerNumber + 1;
+                }
                 //invoke DAL
                 return CustomerDataAccessLayer.AddCustomer(customer);
             }
@@ -142,7 +150,7 @@ namespace JeevanBank.BusinessLogicLayer
 
         public bool UpdateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+
         }
         #endregion
 
