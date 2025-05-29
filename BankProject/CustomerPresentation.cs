@@ -12,7 +12,8 @@ namespace BankProject
     {
         internal static void AddCustomer()
         {
-
+            // Create a new instance of Customer
+            Customer customer = new Customer();
         }
 
     }
