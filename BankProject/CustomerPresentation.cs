@@ -36,16 +36,55 @@ namespace BankProject
                 // create BL Object
                 ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
                 Guid newGuid = customerBusinessLogicLayer.AddCustomer(customer);
-                Console.WriteLine(newGuid);
-                Console.WriteLine("Customer Added.\n");
+                List<Customer> matchingCustomer = customerBusinessLogicLayer.GetCustomersByCondition(item => item.CustomerID == newGuid);
+                if (matchingCustomer.Count >= 1)
+                {
+                    Console.WriteLine("New Customer Code: " + matchingCustomer[0].CustomerCode);
+                    Console.WriteLine("Customer Added.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Customer Not Added");
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.GetType());
+            }
+
+
+
+        }
+
+        internal static void ViewCustomer()
+        {
+            try
+            {
+                ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+
+                List<Customer> allCustomer = customerBusinessLogicLayer.GetCustomers();
+                Console.WriteLine("************ALL CUSTOMER**********");
+                // read all customer
+                foreach (var item in allCustomer)
+                {
+                    Console.WriteLine("Customer Code: " + item.CustomerCode);
+                    Console.WriteLine("Customer Name: " + item.CustomerName);
+                    Console.WriteLine("Customer Address: " + item.Address);
+                    Console.WriteLine("Customer Landmark: " + item.Landmarks);
+                    Console.WriteLine("Customer City: " + item.City);
+                    Console.WriteLine("Customer Country: " + item.Country);
+                    Console.WriteLine("Customer Mobile: " + item.Mobile);
+                    Console.WriteLine();
+                }
+
+            }
+            catch (Exception ex)
             {
 
-                throw;
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.GetType());
             }
-
-
         }
 
     }

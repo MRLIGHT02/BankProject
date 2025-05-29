@@ -15,17 +15,17 @@ namespace JeevanBank.DataAccessLayer
     public class CustomerDataAccessLayer : ICustomerDataAccessLayer
     {
         #region Fields
-        private List<Customer> _customers;
+        private static List<Customer> _customers;
         #endregion
 
         #region Constructor
-        public CustomerDataAccessLayer()
+        static CustomerDataAccessLayer()
         {
             _customers = new List<Customer>();
         }
         #endregion
         #region Properties
-        private List<Customer> Customers
+        private static List<Customer> Customers
         {
             set => _customers = value;
             get => _customers;
@@ -74,9 +74,9 @@ namespace JeevanBank.DataAccessLayer
                 // create a new customer list
                 List<Customer> customerslist = new List<Customer>();
                 // filter the condition
-                List<Customer> filteredCustomers = customerslist.FindAll(predicate);
+                List<Customer> filteredCustomers = Customers.FindAll(predicate);
                 // copy all customer from the source collection into the new customer list;
-                Customers.ForEach(item => customerslist.Add(item.Clone() as Customer));
+                filteredCustomers.ForEach(item => customerslist.Add(item.Clone() as Customer));
                 return customerslist;
             }
             catch (CustomerException)

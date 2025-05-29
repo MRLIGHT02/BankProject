@@ -92,6 +92,7 @@ class Program
             switch (customerMenuChoice)
             {
                 case 1: CustomerPresentation.AddCustomer(); break;
+                case 5: CustomerPresentation.ViewCustomer(); break;
             }
 
         } while (customerMenuChoice != 0);
