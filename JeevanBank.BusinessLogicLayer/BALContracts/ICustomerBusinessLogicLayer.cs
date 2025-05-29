@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JeevanBank.BusinessLogicLayer.BALContracts
 {
-    internal interface ICustomerBusinessLogicLayer
+    public interface ICustomerBusinessLogicLayer
     {
         /// <summary>
         /// Retrieves a list of all customers.

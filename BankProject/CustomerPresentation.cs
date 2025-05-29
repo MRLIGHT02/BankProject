@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using JeevanBank.Entities;
 using JeevanBank.BusinessLogicLayer;
+using JeevanBank.BusinessLogicLayer.BALContracts;
+
 using JeevanBank.Exceptions;
 namespace BankProject
 {
@@ -20,6 +22,18 @@ namespace BankProject
             customer.CustomerName = Console.ReadLine();
             Console.Write("Address: ");
             customer.Address = Console.ReadLine();
+            Console.Write("Landmark: ");
+            customer.Landmarks = Console.ReadLine();
+            Console.Write("City: ");
+            customer.City = Console.ReadLine();
+            Console.Write("Country: ");
+            customer.Country = Console.ReadLine();
+            Console.Write("Mobile: ");
+            customer.Mobile = Console.ReadLine();
+
+            // create BL Object
+            ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+
         }
 
     }
