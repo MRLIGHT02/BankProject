@@ -14,6 +14,12 @@ namespace BankProject
         {
             // Create a new instance of Customer
             Customer customer = new Customer();
+            // Read all Details from the user
+            Console.WriteLine("\n*********ADD CUSTOMER*********");
+            Console.Write("Customer Name: ");
+            customer.CustomerName = Console.ReadLine();
+            Console.Write("Address: ");
+            customer.Address = Console.ReadLine();
         }
 
     }
