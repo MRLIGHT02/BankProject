@@ -1,4 +1,6 @@
-﻿class Program
+﻿using BankProject;
+
+class Program
 {
     //Application execution starts here
     static void Main()
@@ -86,6 +88,12 @@
             //accept customers menu choice
             System.Console.Write("Enter choice: ");
             customerMenuChoice = System.Convert.ToInt32(System.Console.ReadLine());
+            // switch case
+            switch (customerMenuChoice)
+            {
+                case 1: CustomerPresentation.AddCustomer(); break;
+            }
+
         } while (customerMenuChoice != 0);
     }
 
