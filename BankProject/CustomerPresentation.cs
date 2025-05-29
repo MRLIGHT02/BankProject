@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using JeevanBank.Entities;
+using JeevanBank.BusinessLogicLayer;
+using JeevanBank.Exceptions;
 namespace BankProject
 {
-    internal class CustomerPresentation
+    static class CustomerPresentation
     {
     }
 }
