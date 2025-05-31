@@ -261,10 +261,12 @@ namespace BankProject
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.GetType());
             }
 
 
