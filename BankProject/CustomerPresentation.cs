@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-using JeevanBank.Entities;
-using JeevanBank.BusinessLogicLayer;
+﻿using JeevanBank.BusinessLogicLayer;
 using JeevanBank.BusinessLogicLayer.BALContracts;
-
+using JeevanBank.Entities;
+using JeevanBank.Entities.Contracts;
 using JeevanBank.Exceptions;
+using System;
+using System.Collections.Generic;
 namespace BankProject
 {
     /// <summary>
@@ -202,12 +201,50 @@ namespace BankProject
 
         internal static void UpdateCustomer()
         {
+            List<Guid> guids = new List<Guid>();
             ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            List<Customer> AllCustomer = customerBusinessLogicLayer.GetCustomers();
-            int index = 0;
-            Customer customer = new Customer();
 
-            bool updateCustomer = customerBusinessLogicLayer.UpdateCustomer(AllCustomer[index]);
+            List<Customer> allCustomer = customerBusinessLogicLayer.GetCustomers();
+            if (allCustomer.Count >= 1)
+            {
+                Console.WriteLine("************Customer Id List**********");
+                int id = 0;
+                // read all customer
+                foreach (Customer item in allCustomer)
+                {
+                    Console.WriteLine(id + 1 + ". " + "Customer Name is " + item.CustomerName);
+                    guids.Add(item.CustomerID);
+
+                }
+                int index = Int32.Parse(Console.ReadLine());
+                if (index == 1)
+                {
+                    index = 0;
+                }
+                else
+                {
+                    index--;
+                }
+                Guid updateId = guids[index];
+
+                Customer customer = new Customer();
+                customer.CustomerID = updateId;
+                Console.Write("Customer Name: ");
+                customer.CustomerName = Console.ReadLine();
+                Console.Write("Address: ");
+                customer.Address = Console.ReadLine();
+                Console.Write("Landmark: ");
+                customer.Landmarks = Console.ReadLine();
+                Console.Write("City: ");
+                customer.City = Console.ReadLine();
+                Console.Write("Country: ");
+                customer.Country = Console.ReadLine();
+                Console.Write("Mobile: ");
+                customer.Mobile = Console.ReadLine();
+                customerBusinessLogicLayer.UpdateCustomer(customer);
+
+
+            }
         }
     }
 }
