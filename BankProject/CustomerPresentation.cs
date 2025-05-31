@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using JeevanBank.Entities;
 using JeevanBank.BusinessLogicLayer;
 using JeevanBank.BusinessLogicLayer.BALContracts;
@@ -113,7 +111,7 @@ namespace BankProject
         /// a numbered list. The user is prompted to select a customer by entering the index of the customer in the list. The
         /// selected customer is then deleted. If no customers are available, a message is displayed indicating that there are
         /// no customers to delete.</remarks>
-        public static void GetList()
+        internal static void GetList()
         {
             try
             {
@@ -202,5 +200,14 @@ namespace BankProject
             //}
         }
 
+        internal static void UpdateCustomer()
+        {
+            ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+            List<Customer> AllCustomer = customerBusinessLogicLayer.GetCustomers();
+            int index = 0;
+            Customer customer = new Customer();
+
+            bool updateCustomer = customerBusinessLogicLayer.UpdateCustomer(AllCustomer[index]);
+        }
     }
 }
