@@ -93,7 +93,7 @@ class Program
             {
                 case 1: CustomerPresentation.AddCustomer(); break;
                 case 2: CustomerPresentation.DeleteCustomer(); break;
-
+                case 3: CustomerPresentation.UpdateCustomer(); break;
                 case 5: CustomerPresentation.ViewCustomer(); break;
             }
 

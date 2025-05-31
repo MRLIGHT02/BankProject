@@ -160,7 +160,10 @@ namespace JeevanBank.DataAccessLayer
                 // updating the customer
                 if (existingCustomer != null)
                 {
-                    existingCustomer.CustomerCode = customer.CustomerCode;
+                  if (existingCustomer.CustomerCode == customer.CustomerCode)
+                    {
+                        existingCustomer.CustomerCode = customer.CustomerCode;
+                    }
                     existingCustomer.CustomerID = customer.CustomerID;
                     existingCustomer.CustomerName = customer.CustomerName;
                     existingCustomer.City = customer.City;

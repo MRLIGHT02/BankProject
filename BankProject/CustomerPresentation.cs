@@ -183,68 +183,91 @@ namespace BankProject
         internal static void DeleteCustomer()
         {
             GetList();
-            //ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-            //Console.Write("Enter Customer Id: ");
-            //Guid customerid = Guid.Parse(Console.ReadLine().Trim());
-            //bool customerDeleted = customerBusinessLogicLayer.DeleteCustomer(customerid);
-            //if (customerDeleted)
-            //{
-            //    Console.WriteLine("Customer Deleted Successfully");
-            //    ViewCustomer();
 
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Customer not Deleted ");
-            //}
         }
 
+        /// <summary>
+        /// Updates the details of an existing customer based on user input.
+        /// </summary>
+        /// <remarks>This method retrieves a list of customers, allows the user to select a customer by
+        /// index,  and prompts the user to input updated details for the selected customer. The updated  information is
+        /// then saved using the business logic layer. If the update is successful,  a confirmation message is
+        /// displayed; otherwise, an error message is shown.</remarks>
         internal static void UpdateCustomer()
         {
-            List<Guid> guids = new List<Guid>();
-            ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
-
-            List<Customer> allCustomer = customerBusinessLogicLayer.GetCustomers();
-            if (allCustomer.Count >= 1)
+            try
             {
-                Console.WriteLine("************Customer Id List**********");
-                int id = 0;
-                // read all customer
-                foreach (Customer item in allCustomer)
+
+
+                #region Logic Layer
+                List<Guid> guids = new List<Guid>();
+                ICustomerBusinessLogicLayer customerBusinessLogicLayer = new CustomerBusinessLogicLayer();
+
+                List<Customer> allCustomer = customerBusinessLogicLayer.GetCustomers();
+                if (allCustomer.Count >= 1)
                 {
-                    Console.WriteLine(id + 1 + ". " + "Customer Name is " + item.CustomerName);
-                    guids.Add(item.CustomerID);
+                    Console.WriteLine("************Customer Id List**********");
+                    int id = 0;
+                    // read all customer
+                    foreach (Customer item in allCustomer)
+                    {
+                        Console.WriteLine(id + 1 + ". " + "Customer Name is " + item.CustomerName);
+                        guids.Add(item.CustomerID);
+
+                    }
+                    int index = Int32.Parse(Console.ReadLine());
+                    if (index == 1)
+                    {
+                        index = 0;
+                    }
+                    else
+                    {
+                        index--;
+                    }
+                    Guid updateId = guids[index];
+
+                    Customer customer = new Customer();
+                    customer.CustomerID = updateId;
+                    Console.Write("Customer Name: ");
+                    customer.CustomerName = Console.ReadLine();
+                    Console.Write("Address: ");
+                    customer.Address = Console.ReadLine();
+                    Console.Write("Landmark: ");
+                    customer.Landmarks = Console.ReadLine();
+                    Console.Write("City: ");
+                    customer.City = Console.ReadLine();
+                    Console.Write("Country: ");
+                    customer.Country = Console.ReadLine();
+                    Console.Write("Mobile: ");
+                    customer.Mobile = Console.ReadLine();
+
+                    bool isupdated = customerBusinessLogicLayer.UpdateCustomer(customer);
+                    if (isupdated)
+                    {
+
+                        Console.WriteLine("Customer Updated SuccessFully");
+                        Guid newGuid = Guid.NewGuid();
+
+                        customer.CustomerID = newGuid;
+
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Customer Not Updated");
+                    }
+                    #endregion
 
                 }
-                int index = Int32.Parse(Console.ReadLine());
-                if (index == 1)
-                {
-                    index = 0;
-                }
-                else
-                {
-                    index--;
-                }
-                Guid updateId = guids[index];
-
-                Customer customer = new Customer();
-                customer.CustomerID = updateId;
-                Console.Write("Customer Name: ");
-                customer.CustomerName = Console.ReadLine();
-                Console.Write("Address: ");
-                customer.Address = Console.ReadLine();
-                Console.Write("Landmark: ");
-                customer.Landmarks = Console.ReadLine();
-                Console.Write("City: ");
-                customer.City = Console.ReadLine();
-                Console.Write("Country: ");
-                customer.Country = Console.ReadLine();
-                Console.Write("Mobile: ");
-                customer.Mobile = Console.ReadLine();
-                customerBusinessLogicLayer.UpdateCustomer(customer);
-
-
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
     }
 }
